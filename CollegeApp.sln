@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeApp.Module", "CollegeApp.Module\CollegeApp.Module.csproj", "{EFE42CB6-2CDD-4E09-94F4-02CA3FC308CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeApp.Blazor.Server", "CollegeApp.Blazor.Server\CollegeApp.Blazor.Server.csproj", "{3B457632-C0CC-43B7-9598-BB057A5F2355}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFE42CB6-2CDD-4E09-94F4-02CA3FC308CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFE42CB6-2CDD-4E09-94F4-02CA3FC308CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFE42CB6-2CDD-4E09-94F4-02CA3FC308CE}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{EFE42CB6-2CDD-4E09-94F4-02CA3FC308CE}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{EFE42CB6-2CDD-4E09-94F4-02CA3FC308CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFE42CB6-2CDD-4E09-94F4-02CA3FC308CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B457632-C0CC-43B7-9598-BB057A5F2355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B457632-C0CC-43B7-9598-BB057A5F2355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B457632-C0CC-43B7-9598-BB057A5F2355}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{3B457632-C0CC-43B7-9598-BB057A5F2355}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{3B457632-C0CC-43B7-9598-BB057A5F2355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B457632-C0CC-43B7-9598-BB057A5F2355}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6475271E-5A5A-4B41-8031-83064519AC86}
+	EndGlobalSection
+EndGlobal

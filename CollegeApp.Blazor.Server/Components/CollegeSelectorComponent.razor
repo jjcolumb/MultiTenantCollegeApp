@@ -1,0 +1,77 @@
+﻿@using CollegeApp.Blazor.Server.Dtos
+@using CollegeApp.Blazor.Server.Services
+@using DevExpress.ExpressApp.Actions
+@inject IJSRuntime JSRuntime
+@inject ICollegeSelectorService CollegeSelectorService;
+
+<div>
+    <div id="dropdown-overview-target-container">
+        <DxButton Click="() => IsOpen = !IsOpen"
+                  RenderStyle="@ButtonRenderStyle.Secondary">SELECT COLLEGE</DxButton>
+    </div>
+
+    <DxDropDown @bind-IsOpen="IsOpen"
+                HeaderVisible="false"
+                FooterVisible="false"
+                PositionTarget="#dropdown-overview-target-container"
+                Width="200px"
+                PositionMode="DropDownPositionMode.Bottom"           
+    >
+        <BodyContentTemplate>
+            @foreach (var tuple in CollegeSelectorService.ToolBarInfo.Items)
+            {
+                var isChecked = tuple.Item1;
+                var choiceActionItem = tuple.Item2;
+                <DxCheckBox CheckedChanged="@((bool value) => OnCheckedChanged(value, tuple))"
+                            AllowIndeterminateState="false"
+                            Checked="isChecked"
+                >
+                    @choiceActionItem.Caption
+                </DxCheckBox>
+            }
+        </BodyContentTemplate>
+    </DxDropDown>
+</div>
+
+
+
+@code {
+    public static RenderFragment<IToolbarItemInfo> RenderTemplate = (item) => @<CollegeSelectorComponent Info="@item" />;
+
+    [Parameter]
+    public IToolbarItemInfo Info { get; set; }
+
+    public ToolBarInfo ToolBarInfo { get; set; }
+
+    public bool IsOpen { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        //ToolBarInfo = (ToolBarInfo)Info;
+    }
+
+    private void OnCheckedChanged(bool value, (bool, ChoiceActionItem) item)
+    {
+        item.Item1 = value;
+        ToolBarInfo.Clicked(item);
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        CollegeSelectorService.ControllerActivated += Handle_ControllerActivated;
+        ToolBarInfo = CollegeSelectorService.ToolBarInfo;
+    }
+
+    private void Handle_ControllerActivated(object sender, EventArgs e)
+    {
+        var service = (ICollegeSelectorService)sender;
+        ToolBarInfo = service.ToolBarInfo;
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+    }
+
+}

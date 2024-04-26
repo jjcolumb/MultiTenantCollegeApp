@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="CollegeApp.Module.BusinessObjects.ApplicationUser">
+      <OwnMembers>
+        <Member Name="FavoriteCollege" LookupEditorMode="AllItemsWithSearch" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems NavigationStyle="Accordion">
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="FavoriteCollege_DetailView" Caption="Favorite College" ViewId="College_DetailView" Visible="False" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <DetailView Id="Course_DetailView">
+      <Items>
+        <PropertyEditor Id="Professor" LookupEditorMode="AllItemsWithSearch" />
+      </Items>
+    </DetailView>
+    <DetailView Id="Professor_DetailView">
+      <Items>
+        <PropertyEditor Id="Courses" LookupEditorMode="AllItemsWithSearch" />
+      </Items>
+    </DetailView>
+    <DetailView Id="Student_DetailView">
+      <Items>
+        <PropertyEditor Id="Course" LookupEditorMode="AllItemsWithSearch" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>
